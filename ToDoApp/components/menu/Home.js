@@ -12,7 +12,7 @@ import Last from "./components/menu/Last";
 
 const json_data = require('./components/taskCategory.json');
 
- export default function App(){
+ export default function Home(){
   
   
    const [data, setData] = useState([])

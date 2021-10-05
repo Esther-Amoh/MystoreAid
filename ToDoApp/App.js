@@ -9,95 +9,96 @@
  import Next from "./components/menu/Next";
 import Go from "./components/menu/Go";
 import Last from "./components/menu/Last";
-import Home from "./components/menu/Home"
+import Home from "./components/menu/Home";
  
  const Stack = createNativeStackNavigator();
  export default function App(){
 
 
-//  const json_data = require('./components/taskCategory.json');
+  const json_data = require('./components/taskCategory.json');
 
-//  export default function App(){
+  //export default function App(){
   
   
-//    const [data, setData] = useState([])
+    const [data, setData] = useState([])
 
 
-//    const pressHandler = (/*key*/id) => {
-//      /*setTodos*/setData((/*prevTodos*/prevData) => {
-//        return prevData.filter(/*todo*/id => /*todo.key != key*/ data.id != id);
-//        //<NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
-//      })
-//    }
+    const pressHandler = (/*key*/id) => {
+      /*setTodos*/setData((/*prevTodos*/prevData) => {
+       return prevData.filter(/*todo*/id => /*todo.key != key*/ data.id != id);
+        //<NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+      })
+    }
 
-//    const submitHandler = (/*text*/ name) => {
+    const submitHandler = (/*text*/ name) => {
 
-//      if(name.length > 3){
-//        setData((prevData) => {
-//          return[
-//            {name: name, id: Math.random().toString()},
-//            ...prevData
-//          ]
-//        })
-//      } 
-//      else {
-//        Alert.alert('ooops!', 'Category must be 4 characters long', [
-//          {name: 'Ok', onPress: () => console.log('alert closed')}
-//        ])
-//      }
-//    }
+      if(name.length > 3){
+       setData((prevData) => {
+          return[
+            {name: name, id: Math.random().toString()},
+            ...prevData
+          ]
+        })
+      } 
+      else {
+        Alert.alert('ooops!', 'Category must be 4 characters long', [
+          {name: 'Ok', onPress: () => console.log('alert closed')}
+        ])
+      }
+    }
 
-//    return(
+    return(
     
-//       <TouchableWithoutFeedback onPress= {() => {
-//         Keyboard.dismiss();
-//         console.log('keyboard removed')
-//       }}>
-//       <View style={styles.container}>
-//         {/*header*/}
-//         <Header />
-//         <View style={styles.content}>
-//           {/* to do */}
-//           <AddTodo submitHandler={submitHandler}/>
-//           <View style={styles.list}>
-//             <FlatList 
-//              //  data={todos}
-//              //  renderItem={({item}) => (
-//              //    <TodoItem item={item} pressHandler={pressHandler}/>
-//              //  )}
-//               data = {json_data.taskCategroy}
-//                keyExtractor={(x, i) => i}
-//                renderItem={({ item }) => (
-//                 <Card style={{ marginTop: 10, padding: 5 }}>
-//                   <TouchableOpacity onPress ="Learn">
-//                   <Text style={{ color: 'coral' }}>
-//                   {`${item.name}`}
-//                   </Text>
-//                   <Button title="Learn" onPress={() => navigation.navigate("Next")}>
-//                   </Button>
-//                   </TouchableOpacity>
+       <TouchableWithoutFeedback onPress= {() => {
+         Keyboard.dismiss();
+         console.log('keyboard removed')
+       }}>
+       <View style={styles.container}>
+         {/*header*/}
+         <Header />
+         <View style={styles.content}>
+           {/* to do */}
+           <AddTodo submitHandler={submitHandler}/>
+           <View style={styles.list}>
+             <FlatList 
+              //  data={todos}
+              //  renderItem={({item}) => (
+              //    <TodoItem item={item} pressHandler={pressHandler}/>
+              //  )}
+               data = {json_data.taskCategroy}
+                keyExtractor={(x, i) => i}
+                renderItem={({ item }) => (
+                 <Card style={{ marginTop: 10, padding: 5 }}>
+                   <TouchableOpacity onPress ="Learn">
+                   <Text style={{ color: 'coral' }}>
+                   {`${item.name}`}
+                   </Text>
+                   <Button title="Learn" onPress={() => navigation.navigate("Next")}>
+                   </Button>
+                   </TouchableOpacity>
 
-//                   <Text style={{ color: 'coral' }}>
-//                   {`${item.name}`}
-//                   </Text>
-//                 </Card>
+                   <Text style={{ color: 'coral' }}>
+                   {`${item.name}`}
+                   </Text>
+                 </Card>
               
-//               )}
-//               renderItem = {({item}) => (
-//                 <TodoItem item={item} pressHandler={pressHandler}/>
-//               )}
-//             />
-//           </View>
-//         </View>
-//       </View>
-//       </TouchableWithoutFeedback>
+               )}
+               renderItem = {({item}) => (
+                 <TodoItem item={item} pressHandler={pressHandler}/>
+               )}
+             />
+           </View>
+         </View>
+       </View>
+       </TouchableWithoutFeedback>
  
-//    );
+    );
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name='Home' component={Home}/>
+        <Stack.Screen name="App" component={App}/>
         <Stack.Screen name='Next' component={Next} options={{ title: 'Overview' }}/>
         <Stack.Screen name='Go' component={Go}/>
         <Stack.Screen name='Last' component={Last}/>
@@ -105,23 +106,23 @@ import Home from "./components/menu/Home"
     </NavigationContainer>
 
   );
-  } 
-// }
+  //} 
+ }
 
 
-//  const styles = StyleSheet.create({
-//    container: {
-//      flex: 1,
-//      backgroundColor: '#fff',
-//    },
-//    content: {
-//      padding: 40,
-//      flex: 1,
-//    },
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+    },
+    content: {
+      padding: 40,
+      flex: 1,
+    },
 
-//    list: {
-//      flex: 1,
-//      marginTop: 20,
-//    }
+    list: {
+      flex: 1,
+      marginTop: 20,
+    }
 
-//  })
+  })
