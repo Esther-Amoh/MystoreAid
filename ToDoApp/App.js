@@ -103,6 +103,7 @@ import Home from "./components/menu/Home"
         <Stack.Screen name='Last' component={Last}/>
       </Stack.Navigator>
     </NavigationContainer>
+
   );
   } 
 // }

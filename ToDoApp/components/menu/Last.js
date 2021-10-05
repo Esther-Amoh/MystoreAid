@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 function Last(){
 const [data] = useState([]);
 
-const Last = () => {
+const Last = ({Navigation}) => {
     return(
         <View style={styles.container}>
             data = {json_data.Task}

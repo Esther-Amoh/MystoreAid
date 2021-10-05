@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 function Go(){
 const [data] = useState([]);
 
-const Go = () => {
+const Go = ({Navigation}) => {
     return(
         <View style={styles.container}>
             data = {json_data.Task}
